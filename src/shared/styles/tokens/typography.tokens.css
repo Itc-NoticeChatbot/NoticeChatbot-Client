@@ -1,0 +1,23 @@
+:root {
+  --ds-font-family-base: 'Pretendard', 'Noto Sans KR', sans-serif;
+
+  --ds-text-display: 27px;
+  --ds-text-title: 15px;
+  --ds-text-body: 14.5px;
+  --ds-text-label: 13.5px;
+  --ds-text-item: 13px;
+  --ds-text-meta: 12px;
+  --ds-text-cap: 11.5px;
+  --ds-text-micro: 11px;
+
+  --ds-font-weight-display: 700;
+  --ds-font-weight-title: 700;
+  --ds-font-weight-body: 400;
+  --ds-font-weight-label: 600;
+  --ds-font-weight-item: 500;
+  --ds-font-weight-meta: 600;
+  --ds-font-weight-cap: 700;
+  --ds-font-weight-micro: 500;
+
+  --ds-line-height-default: 1.4;
+}

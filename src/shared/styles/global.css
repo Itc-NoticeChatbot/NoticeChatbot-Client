@@ -1,15 +1,26 @@
-:root {
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-}
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import './tokens/colors.tokens.css';
+@import './tokens/typography.tokens.css';
 
-* {
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  margin: 0;
-}
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
 
-#root {
-  min-height: 100vh;
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--ds-font-family-base);
+    color: var(--ds-color-ink);
+    background-color: var(--ds-color-surface);
+  }
 }
