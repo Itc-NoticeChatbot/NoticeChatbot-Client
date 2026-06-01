@@ -34,6 +34,25 @@ import { http } from '@shared/api'
 const response = await http.get('/notices')
 ```
 
+## Design Tokens (Tailwind)
+
+- Tailwind 설정: `tailwind.config.cjs`, `postcss.config.cjs`
+- 컬러 토큰: `src/shared/styles/tokens/colors.tokens.css`
+- 폰트 토큰: `src/shared/styles/tokens/typography.tokens.css`
+- 전역 적용: `src/shared/styles/global.css`
+
+예시:
+
+```tsx
+<div className="bg-surface text-ink border border-border rounded-lg p-s4">
+  <h2 className="font-pretendard text-title">토큰 적용 예시</h2>
+  <p className="text-body text-muted">tailwind + ds 토큰 연결 완료</p>
+  <button className="mt-s3 rounded-pill bg-accent px-s4 py-s2 text-white">
+    버튼
+  </button>
+</div>
+```
+
 ## CI
 
 - 워크플로우: `.github/workflows/client-ci.yml`
