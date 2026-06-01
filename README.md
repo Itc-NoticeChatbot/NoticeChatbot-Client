@@ -9,6 +9,18 @@ pnpm install
 pnpm dev
 ```
 
+## Lint & Format
+
+- Lint: `pnpm lint`
+- Format: `pnpm format`
+- Format Check: `pnpm format:check`
+
+### Rules
+
+- ESLint: `eslint.config.js`
+- Prettier: `.prettierrc.json`
+- Ignore: `.prettierignore`
+
 ## Architecture (Rough)
 
 - `src/app`: 앱 엔트리/전역 provider
@@ -47,9 +59,7 @@ const response = await http.get('/notices')
 <div className="bg-surface text-ink border border-border rounded-lg p-s4">
   <h2 className="font-pretendard text-title">토큰 적용 예시</h2>
   <p className="text-body text-muted">tailwind + ds 토큰 연결 완료</p>
-  <button className="mt-s3 rounded-pill bg-accent px-s4 py-s2 text-white">
-    버튼
-  </button>
+  <button className="mt-s3 rounded-pill bg-accent px-s4 py-s2 text-white">버튼</button>
 </div>
 ```
 
