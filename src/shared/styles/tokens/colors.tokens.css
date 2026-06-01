@@ -1,0 +1,18 @@
+:root {
+  --ds-color-accent: oklch(0.52 0.11 252);
+  --ds-color-accent-soft: oklch(0.95 0.03 252);
+  --ds-color-accent-border: oklch(0.85 0.05 252);
+  --ds-color-danger: #c0392b;
+
+  --ds-color-white: #ffffff;
+  --ds-color-surface: #f7f7f6;
+  --ds-color-surface-2: #ecebe8;
+  --ds-color-surface-3: #f0efec;
+  --ds-color-bubble: #ececea;
+
+  --ds-color-ink: #1b1b19;
+  --ds-color-muted: #6f6e6a;
+  --ds-color-faint: #9a9995;
+  --ds-color-border: #e7e6e3;
+  --ds-color-border-2: #d9d8d4;
+}
