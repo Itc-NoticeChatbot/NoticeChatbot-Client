@@ -36,3 +36,18 @@ Default base ref: `origin/develop`
 - Do not review unrelated untouched areas unless required for impact analysis.
 - Prefer actionable findings over style-only comments.
 - If no issues are found, explicitly state that.
+
+## User Approval Gate
+
+- Before any execution that creates, edits, deletes, publishes, deploys, or triggers external side effects, present a short preview to the user first.
+- The preview must include: target, planned action, and expected result.
+- Do not execute the action until the user gives explicit approval.
+- If the user revises the request, regenerate the preview and request approval again.
+- Read-only exploration (inspection, fetch, analysis) may proceed without approval, but any write/action step still requires approval.
+
+## Commit Message Rule
+
+- Commit type must be in English: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `style`.
+- Commit description (after `type:`) must be written in Korean.
+- Format: `type: 한글 메시지`
+- Example: `chore: 보일러플레이트 리소스 제거`
