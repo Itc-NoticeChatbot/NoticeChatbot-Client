@@ -4,7 +4,7 @@ import { cn } from '../lib/cn'
 
 type PrimaryButtonSize = 'sm' | 'md'
 
-interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   size?: PrimaryButtonSize
 }

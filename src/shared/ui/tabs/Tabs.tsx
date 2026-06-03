@@ -5,7 +5,7 @@ export interface TabItem {
   label: string
 }
 
-interface TabsProps {
+export interface TabsProps {
   activeKey: string
   items: TabItem[]
   onChange: (key: string) => void
