@@ -23,7 +23,7 @@ export function BookmarkItem({
       >
         <span className="line-clamp-1 text-item text-ink">{title}</span>
         <span className="mt-s1 block text-micro text-muted">
-          {source} · {publishedAt}
+          {source ? `${source} · ` : ''}{publishedAt}
         </span>
       </button>
 

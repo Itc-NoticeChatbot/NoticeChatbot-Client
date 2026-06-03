@@ -4,8 +4,8 @@ import { EmptyState } from '@shared/ui'
 
 export interface ConvListSectionProps {
   conversations: Conversation[]
-  activeConvId?: string
-  onSelect?: (id: string) => void
+  activeConvId?: number | null
+  onSelect?: (id: number) => void
 }
 
 export function ConvListSection({ conversations, activeConvId, onSelect }: ConvListSectionProps) {

@@ -1,6 +1,8 @@
 export interface Conversation {
-  id: string
+  id: number
   question: string
+  answer: string
+  relatedNoticeIds: number[]
   createdAt: string
   answerPreview?: string
 }

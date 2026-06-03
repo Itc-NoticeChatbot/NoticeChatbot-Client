@@ -4,7 +4,7 @@ import { BrandMark } from '../brand-mark/BrandMark'
 import { NoticeList } from './NoticeList'
 
 export interface AssistantMessageNotice {
-  id: string
+  id: number
   order: number
   category: string
   title: string
