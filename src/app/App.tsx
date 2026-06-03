@@ -1,23 +1,34 @@
-import { AssistantMessage, BrandMark, Typing, UserBubble } from '@shared/ui'
+import { useState } from 'react'
+
+import { AssistantMessage, BrandMark, Composer, Typing, UserBubble } from '@shared/ui'
 
 export function App() {
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleSubmit = (value: string) => {
+    window.alert(`전송: ${value}`)
+    setIsLoading(true)
+    setTimeout(() => setIsLoading(false), 2000)
+  }
+
   return (
     <main className="min-h-screen bg-surface px-s5 py-s7 font-pretendard text-ink">
       <section className="mx-auto flex max-w-2xl flex-col gap-s7">
         <div className="flex flex-col gap-s4 rounded-2xl border border-border bg-white p-s6 shadow-card">
           <BrandMark />
           <div>
-            <h1 className="text-display">채팅 메시지 계층</h1>
+            <h1 className="text-display">질문 입력 영역</h1>
             <p className="mt-s2 text-body text-muted">
-              UserBubble, Typing, AssistantMessage 검증 화면입니다.
+              Composer 컴포넌트 검증 화면입니다.
             </p>
           </div>
         </div>
 
-        <section className="rounded-2xl border border-border bg-white p-s6 shadow-card">
-          <div className="flex flex-col gap-s5">
-            <UserBubble>수강신청 정정 기간 언제야?</UserBubble>
+        <section className="flex flex-col gap-s5 rounded-2xl border border-border bg-white p-s6 shadow-card">
+          <UserBubble>수강신청 정정 기간 언제야?</UserBubble>
+          {isLoading ? (
             <Typing />
+          ) : (
             <AssistantMessage
               subject="수강신청 정정 기간"
               notices={[
@@ -32,25 +43,30 @@ export function App() {
                 },
               ]}
             >
-              2026학년도 1학기 수강신청 정정 기간은 3월 2일(월) 10:00 ~ 3월 6일(금) 17:00 입니다. 정정은 학사정보시스템에서 가능합니다.
+              2026학년도 1학기 수강신청 정정 기간은 3월 2일(월) 10:00 ~ 3월 6일(금) 17:00 입니다.
             </AssistantMessage>
-            <UserBubble>장학금 신청 어떻게 해?</UserBubble>
-            <AssistantMessage
-              subject="장학금 신청"
-              notices={[
-                {
-                  id: 'n-2',
-                  order: 1,
-                  category: '장학',
-                  title: '2026-1학기 교내장학금 신청 마감 D-3',
-                  source: '장학팀',
-                  publishedAt: '2026-03-01',
-                  summary: '교내 우수장학금 신청 마감이 3일 남았습니다. 학생지원시스템에서 신청하세요.',
-                },
-              ]}
-            >
-              교내 장학금은 학생지원시스템 &gt; 장학 메뉴에서 신청할 수 있습니다.
-            </AssistantMessage>
+          )}
+        </section>
+
+        <div className="rounded-2xl border border-border bg-white p-s4 shadow-pop">
+          <Composer onSubmit={handleSubmit} isLoading={isLoading} />
+        </div>
+
+        <section className="rounded-2xl border border-border bg-white p-s6 shadow-card">
+          <h2 className="text-title">Composer 상태</h2>
+          <div className="mt-s5 flex flex-col gap-s4">
+            <div>
+              <p className="mb-s2 text-meta text-muted">기본</p>
+              <Composer onSubmit={() => {}} />
+            </div>
+            <div>
+              <p className="mb-s2 text-meta text-muted">로딩</p>
+              <Composer onSubmit={() => {}} isLoading />
+            </div>
+            <div>
+              <p className="mb-s2 text-meta text-muted">비활성</p>
+              <Composer onSubmit={() => {}} disabled />
+            </div>
           </div>
         </section>
       </section>
