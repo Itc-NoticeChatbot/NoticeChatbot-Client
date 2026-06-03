@@ -25,6 +25,7 @@ export function Chip({
           : 'border-border bg-white text-muted hover:border-accent-border hover:text-ink',
         className,
       )}
+      aria-pressed={selected}
       type={type}
       {...props}
     >
