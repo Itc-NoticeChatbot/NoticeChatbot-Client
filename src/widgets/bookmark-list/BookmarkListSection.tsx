@@ -6,8 +6,8 @@ import { EmptyState, SearchInput } from '@shared/ui'
 
 export interface BookmarkListSectionProps {
   bookmarks: Bookmark[]
-  onOpen?: (id: string) => void
-  onDelete?: (id: string) => void
+  onOpen?: (id: number) => void
+  onDelete?: (id: number) => void
 }
 
 export function BookmarkListSection({ bookmarks, onOpen, onDelete }: BookmarkListSectionProps) {

@@ -1,5 +1,5 @@
 export interface Notice {
-  id: string
+  id: number
   category: string
   title: string
   source: string

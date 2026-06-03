@@ -1,1 +1,5 @@
 export { http } from './http'
+export { getNotices, getNotice } from './notices'
+export { askQuestion, getChatHistories, deleteChatHistory } from './chat'
+export type { AskResult } from './chat'
+export { getBookmarks, createBookmark, deleteBookmark } from './bookmarks'

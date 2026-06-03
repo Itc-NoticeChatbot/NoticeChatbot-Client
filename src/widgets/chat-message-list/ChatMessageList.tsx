@@ -12,6 +12,7 @@ export interface AssistantChatMessage {
   role: 'assistant'
   subject: string
   content: string
+  sourceQuestion: string
   notices?: AssistantMessageNotice[]
 }
 
