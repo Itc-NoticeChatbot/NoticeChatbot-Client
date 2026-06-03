@@ -1,3 +1,5 @@
+export { AssistantMessage } from './assistant-message/AssistantMessage'
+export type { AssistantMessageNotice, AssistantMessageProps } from './assistant-message/AssistantMessage'
 export { BrandMark } from './brand-mark/BrandMark'
 export type { BrandMarkProps } from './brand-mark/BrandMark'
 export { Chip } from './chip/Chip'

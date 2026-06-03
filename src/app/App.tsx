@@ -4,7 +4,7 @@ import type { Bookmark } from '@entities/bookmark'
 import { BookmarkItem } from '@entities/bookmark'
 import { ConvItem } from '@entities/conversation'
 import { NoticeCard } from '@entities/notice'
-import { BrandMark, Chip, PrimaryButton, SearchInput, Tabs } from '@shared/ui'
+import { AssistantMessage, BrandMark, Chip, PrimaryButton, SearchInput, Tabs, Typing, UserBubble } from '@shared/ui'
 
 import {
   MOCK_BOOKMARKS,
@@ -168,6 +168,31 @@ export function App() {
                 />
               ))
             )}
+          </div>
+        </section>
+
+        <section className="rounded-2xl border border-border bg-white p-s6 shadow-card">
+          <h2 className="text-title">채팅 메시지 계층</h2>
+          <p className="mt-s2 text-meta text-muted">UserBubble, Typing, AssistantMessage 검증 화면입니다.</p>
+          <div className="mt-s5 flex flex-col gap-s5">
+            <UserBubble>수강신청 정정 기간 언제야?</UserBubble>
+            <Typing />
+            <AssistantMessage
+              subject="수강신청 정정 기간"
+              notices={[
+                {
+                  id: 'n-1',
+                  order: 1,
+                  category: '학사',
+                  title: '2026학년도 1학기 수강신청 정정 기간 안내',
+                  source: '학사팀',
+                  publishedAt: '2026-05-30',
+                  href: 'https://example.com/notice/1',
+                },
+              ]}
+            >
+              2026학년도 1학기 수강신청 정정 기간은 3월 2일(월) 10:00 ~ 3월 6일(금) 17:00 입니다. 정정은 학사정보시스템에서 가능합니다.
+            </AssistantMessage>
           </div>
         </section>
       </section>
