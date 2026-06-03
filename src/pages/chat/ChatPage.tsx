@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 import type { Bookmark } from '@entities/bookmark'
 import type { Conversation } from '@entities/conversation'
@@ -19,15 +19,16 @@ export function ChatPage() {
   const [activeConvId, setActiveConvId] = useState<string>(MOCK_CONVERSATIONS[0]?.id ?? '')
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [isLoading, setIsLoading] = useState(false)
+  const msgIdRef = useRef(0)
 
   const handleSubmit = (value: string) => {
-    const userMsg: ChatMessage = { id: `u-${Date.now()}`, role: 'user', content: value }
+    const userMsg: ChatMessage = { id: `u-${++msgIdRef.current}`, role: 'user', content: value }
     setMessages((prev) => [...prev, userMsg])
     setIsLoading(true)
 
     setTimeout(() => {
       const assistantMsg: ChatMessage = {
-        id: `a-${Date.now()}`,
+        id: `a-${++msgIdRef.current}`,
         role: 'assistant',
         content: `"${value}"에 대한 답변입니다. 관련 공지를 확인해보세요.`,
       }
@@ -35,9 +36,9 @@ export function ChatPage() {
       setIsLoading(false)
 
       const newConv: Conversation = {
-        id: `c-${Date.now()}`,
+        id: `c-${++msgIdRef.current}`,
         question: value,
-        createdAt: new Date().toLocaleDateString('ko-KR'),
+        createdAt: new Date(Date.now()).toLocaleDateString('ko-KR'),
       }
       setConversations((prev) => [newConv, ...prev])
       setActiveConvId(newConv.id)
