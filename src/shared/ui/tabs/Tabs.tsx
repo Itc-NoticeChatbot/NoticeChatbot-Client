@@ -1,11 +1,11 @@
 import { cn } from '../lib/cn'
 
-export type TabItem = {
+export interface TabItem {
   key: string
   label: string
 }
 
-type TabsProps = {
+interface TabsProps {
   activeKey: string
   items: TabItem[]
   onChange: (key: string) => void

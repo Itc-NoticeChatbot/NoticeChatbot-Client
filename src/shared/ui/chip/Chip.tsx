@@ -2,10 +2,10 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react'
 
 import { cn } from '../lib/cn'
 
-type ChipProps = {
+interface ChipProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   selected?: boolean
-} & ButtonHTMLAttributes<HTMLButtonElement>
+}
 
 export function Chip({
   children,

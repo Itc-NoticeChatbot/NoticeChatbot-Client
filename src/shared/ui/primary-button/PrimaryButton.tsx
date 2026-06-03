@@ -4,10 +4,10 @@ import { cn } from '../lib/cn'
 
 type PrimaryButtonSize = 'sm' | 'md'
 
-type PrimaryButtonProps = {
+interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   size?: PrimaryButtonSize
-} & ButtonHTMLAttributes<HTMLButtonElement>
+}
 
 const sizeClassNames: Record<PrimaryButtonSize, string> = {
   sm: 'h-8 px-s4 text-meta',

@@ -1,3 +1,5 @@
+import { cn } from '@shared/ui/lib/cn'
+
 export interface NoticeCardProps {
   order: number
   category: string
@@ -54,12 +56,12 @@ export function NoticeCard({
 
         <button
           type="button"
-          className={[
+          className={cn(
             'rounded-sm border px-s3 py-s1 text-micro font-semibold transition',
             isBookmarked
               ? 'border-accent-border bg-accent-soft text-accent'
               : 'border-border-2 bg-white text-muted hover:border-accent-border hover:text-accent',
-          ].join(' ')}
+          )}
           aria-pressed={isBookmarked}
           onClick={onBookmarkToggle}
           disabled={!onBookmarkToggle}
