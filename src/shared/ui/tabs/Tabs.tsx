@@ -5,7 +5,7 @@ export interface TabItem {
   label: string
 }
 
-interface TabsProps {
+export interface TabsProps {
   activeKey: string
   items: TabItem[]
   onChange: (key: string) => void
@@ -30,7 +30,7 @@ export function Tabs({ activeKey, className, items, onChange }: TabsProps) {
             className={cn(
               'h-8 rounded-pill px-s5 text-label transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
               selected
-                ? 'bg-white text-ink shadow-card'
+                ? 'bg-white text-ink shadow-tab'
                 : 'text-muted hover:text-ink',
             )}
             key={item.key}

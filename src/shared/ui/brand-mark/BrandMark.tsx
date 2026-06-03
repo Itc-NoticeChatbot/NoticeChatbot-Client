@@ -1,6 +1,6 @@
 import { cn } from '../lib/cn'
 
-interface BrandMarkProps {
+export interface BrandMarkProps {
   className?: string
   compact?: boolean
 }

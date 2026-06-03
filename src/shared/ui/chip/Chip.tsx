@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react'
 
 import { cn } from '../lib/cn'
 
-interface ChipProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ChipProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   selected?: boolean
 }
@@ -25,6 +25,7 @@ export function Chip({
           : 'border-border bg-white text-muted hover:border-accent-border hover:text-ink',
         className,
       )}
+      aria-pressed={selected}
       type={type}
       {...props}
     >
